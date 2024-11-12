@@ -1,21 +1,27 @@
-import React from 'react';
+import { Outlet } from 'react-router-dom';
 import './App.scss';
+import { Navigation } from './components/navigation/navigation';
+import { Footer } from './components/footer/footer';
+import favicon from '../src/img/icons/favicon.svg';
 
-interface Props {
-  onClick: () => void;
-  children: React.ReactNode;
-}
+export const App = () => {
+  const setFavicon = (faviconURL: string) => {
+    const link = document.createElement('link');
 
-export const Provider: React.FC<Props> = React.memo(({ onClick, children }) => (
-  <button type="button" onClick={onClick}>
-    {children}
-  </button>
-));
+    link.rel = 'shortcut icon';
+    link.href = faviconURL;
+    document.head.appendChild(link);
+  };
 
-export const App: React.FC = () => {
+  setFavicon(favicon);
+
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>TodoList</Provider>
+    <div className="App">
+      <Navigation />
+      <div className="content">
+        <Outlet />
+      </div>
+      <Footer />
     </div>
   );
 };
