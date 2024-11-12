@@ -21,7 +21,7 @@ Technologies that were used: HTML, SCSS, REACT, TypeScript
 
 ## Preview
 
-You can see a preview by the [link]()
+You can see a preview by the [link](https://kapesha.github.io/phone-catalog/)
 
 ## Mockup
 
