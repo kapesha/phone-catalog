@@ -1,7 +1,6 @@
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { Product } from '../../types/product';
 import { useEffect, useState, useRef } from 'react';
-// import arrowRight from '../../img/icons/arrowRight.svg';
 import arrowUp from '../../img/icons/arrowTop.svg';
 import arrowDown from '../../img/icons/arrowDown.svg';
 import { SearchLink } from '../../components/SearchLink';
@@ -32,7 +31,6 @@ export const Phones: React.FC<Props> = ({ products }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Используем window.onload для отслеживания загрузки всей страницы
     const handleLoad = () => {
       setIsLoading(false);
     };
@@ -43,7 +41,6 @@ export const Phones: React.FC<Props> = ({ products }) => {
       window.addEventListener('load', handleLoad);
     }
 
-    // Удаляем обработчик события при размонтировании компонента
     return () => {
       window.removeEventListener('load', handleLoad);
     };
